@@ -4,9 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
     <title>To-Do-App</title>
 </head>
 <body>
-    
+    <div class="container">
+        <h1 class="header">Do it. Or don't.<br>But at least list it.</h1>
+        <div class="list-container">
+            <ul class="tasks">
+                <li class="task"><input type="checkbox">Task 1</li>
+                <li class="task"><input type="checkbox">Task 2</li>
+                <li class="task"><input type="checkbox">Task 3</li>
+            </ul>
+            <div class="add-task">
+                <input class="task-text" type="text" placeholder="New task...">
+                <input class="btn-add-task" type="submit" value="+">
+            </div>
+        </div>
+    </div>
 </body>
 </html>
