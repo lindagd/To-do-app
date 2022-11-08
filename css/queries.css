@@ -1,0 +1,15 @@
+/* tablets and small screens */
+@media screen and (min-width: 480px) {
+    .container {
+      margin-top: 2.5rem;
+    }
+    .list-container {
+      width: 400px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .list-container {
+      width: 500px;
+    }
+}
