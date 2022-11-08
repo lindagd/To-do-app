@@ -1,3 +1,3 @@
 # To-do-app
 
->> Status do projeto: em desenvolvimento
+> Status do projeto: em desenvolvimento
