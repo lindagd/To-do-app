@@ -99,3 +99,18 @@ body {
   text-decoration: line-through;
   color: var(--grey);
 }
+/* progress bar */
+.progress-bar {
+  width: 90%;
+  height: 40px;
+  border: 2px solid var(--white);
+  border-radius: .5rem;
+  background-color: var(--black);
+  overflow: hidden;
+}
+.progress {
+  height: 100%;
+  width: 0;
+  background-color: #b700ff5b;
+  transition-duration: .7s;
+}

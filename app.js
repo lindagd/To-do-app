@@ -1,3 +1,5 @@
+// task list section
+
 const taskList = document.querySelector('.tasks');
 const textInput = document.querySelector('.task-text');
 const addBtn = document.querySelector('.add-btn');
@@ -8,6 +10,14 @@ textInput.addEventListener('keypress', (event) => {
         addTask();
 });
 
+
+// progress bar section
+const bar = document.querySelector('.progress');
+let numOfTasks = document.querySelectorAll('.task').length;
+let tasksChecked = document.querySelectorAll('.checked').length;
+
+
+// functions
 function createTask(taskText) {
     // makes sure text is not empty
     if (taskText == '') {
@@ -36,8 +46,22 @@ function createTask(taskText) {
     //functionality of edit and delete buttons
     deleteBtn.addEventListener('click', (event) => {
         taskItem.remove();
+        numOfTasks--;
+        if(checkbox.checked) tasksChecked--;
+        updateProgress();
     });
-
+    //styling text if checked
+    checkbox.addEventListener('click', () => {
+        taskName.classList.toggle('checked');
+        
+        if(checkbox.checked) {
+            tasksChecked++;
+        } else {
+            tasksChecked--;
+        }
+        console.log(tasksChecked)
+        updateProgress();
+    })
 
     container1.append(checkbox, taskName);
     container2.append(editBtn, deleteBtn);
@@ -52,6 +76,17 @@ function addTask() {
     const task = createTask(text);
     if (task != null) {
         taskList.append(task)
+        numOfTasks++;
     }
     textInput.value = '';
+    updateProgress();
+}
+
+function updateProgress() {
+    if(numOfTasks == 0) {
+        bar.style.width = 0;
+        return;
+    }
+    const newWidth = (tasksChecked * 100) / numOfTasks;
+    bar.style.width = newWidth + '%';
 }

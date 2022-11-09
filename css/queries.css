@@ -3,13 +3,13 @@
     .container {
       margin-top: 2.5rem;
     }
-    .list-container {
+    .list-container, .progress-bar {
       width: 400px;
     }
 }
 
 @media screen and (min-width: 1024px) {
-    .list-container {
+    .list-container, .progress-bar {
       width: 500px;
     }
 }
